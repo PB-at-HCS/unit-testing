@@ -1,12 +1,12 @@
 const { add, multiply, divide } = require('./calculator');
 
 // Not using describe and it can lead to confusion about what is tested why
-// Adding it gives more structure and makes it easier to only run tests for specific parts
 test('adding 1 + 2 is equal to 3', () => {
   expect(add(1,2)).toBe(3);
 });
 
 
+// Adding describe and it gives more structure and makes it easier to only run tests for specific parts
 describe('add', () => {
 	it('should return 3 when adding 1 and 2', () => {
 	  expect(add(1,2)).toBe(3);
@@ -18,6 +18,7 @@ describe('multiply', () => {
 	  expect(multiply(3,5)).toBe(15);
 	});
 
+	// Multiple expects in one test are possible
 	it('should return 0 when multiplying anything with 0', () => {
 	  expect(multiply(0,1)).toBe(0);
 	  expect(multiply(0,5)).toBe(0);
